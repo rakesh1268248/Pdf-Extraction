@@ -11,7 +11,7 @@ from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
 # stemmer=PorterStemmer()
 import pydaisi as pyd
-
+wc = pyd.Daisi("feedexpedition/WordCloud")
 
 def return_doc_from_bytes(pdfbytes):
     doc = fitz.open(stream=pdfbytes)
@@ -43,7 +43,7 @@ def preprocessing(sentences):
     
     return documents_clean
 
-def pdf_extract(wc):
+def pdf_extract():
     st.set_page_config(layout = "wide")
     st.title("PDF data extraction")
 
@@ -63,6 +63,5 @@ def pdf_extract(wc):
     
 
 if __name__ == "__main__":
-    wc = pyd.Daisi("feedexpedition/WordCloud")
-    pdf_extract(wc)
+    pdf_extract()
     
