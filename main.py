@@ -58,7 +58,8 @@ def pdf_extract():
             text += page.get_text()
         sentences = nltk.sent_tokenize(text)
         clean_text=preprocessing(sentences)
-        st.write(clean_text)
+        #st.write(clean_text)
+        wc.st_ui(text).value
 
 if __name__ == "__main__":
     pdf_extract()
