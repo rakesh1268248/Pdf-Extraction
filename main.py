@@ -44,6 +44,12 @@ def preprocessing(sentences):
     
     return documents_clean
 
+def wordcloud(clean_text):
+    image=wc.st_ui(clean_text).value
+    return image
+    
+
+
 def pdf_extract():
     st.set_page_config(layout = "wide")
     st.title("PDF data extraction")
@@ -60,7 +66,9 @@ def pdf_extract():
         sentences = nltk.sent_tokenize(text)
         clean_text=preprocessing(sentences)
         #st.write(clean_text)
-        wc.st_ui(clean_text).value
+        image=wordcloud(clean_text)
+        st.header("WordCloud !")
+        st.image(image)
         
 
 if __name__ == "__main__":
