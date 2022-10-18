@@ -43,7 +43,7 @@ def preprocessing(sentences):
     
     return documents_clean
 
-def pdf_extract(wc):
+def pdf_extract():
     st.set_page_config(layout = "wide")
     st.title("PDF data extraction")
 
