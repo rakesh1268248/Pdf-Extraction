@@ -11,8 +11,6 @@ from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
 # stemmer=PorterStemmer()
 
-import pydaisi as pyd
-wc = pyd.Daisi("feedexpedition/WordCloud")
 
 def return_doc_from_bytes(pdfbytes):
     doc = fitz.open(stream=pdfbytes)
@@ -53,10 +51,7 @@ def wordcloud(clean_text):
 def pdf_extract():
     st.set_page_config(layout = "wide")
     st.title("PDF data extraction")
-
-    
     fileupload = st.sidebar.file_uploader("Upload a PDF document here")
-
     if fileupload:
         pdfbytes = fileupload.getvalue()
         doc = return_doc_from_bytes(pdfbytes)  
@@ -65,10 +60,7 @@ def pdf_extract():
             text += page.get_text()
         sentences = nltk.sent_tokenize(text)
         clean_text=preprocessing(sentences)
-        #st.write(clean_text)
-        image=wordcloud(clean_text)
-        st.header("WordCloud !")
-        st.image(image)
+        st.write(clean_text)
         
 
 if __name__ == "__main__":
