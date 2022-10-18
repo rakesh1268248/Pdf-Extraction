@@ -10,7 +10,7 @@ from nltk.corpus import stopwords  #stopwords
 from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
 # stemmer=PorterStemmer()
-import matplotlib.pyplot as plt
+
 import pydaisi as pyd
 wc = pyd.Daisi("feedexpedition/WordCloud")
 
@@ -60,14 +60,8 @@ def pdf_extract():
         sentences = nltk.sent_tokenize(text)
         clean_text=preprocessing(sentences)
         #st.write(clean_text)
-        wordcloud=wc.st_ui(clean_text).value
-        plt.figure(figsize = (15,10), facecolor = None)
-        plt.imshow(wordcloud,interpolation="bilinear")
-        plt.axis("off")
-        plt.tight_layout(pad = 0)
-        plt.show()
-        st.pyplot(fig=plt)
-    
+        wc.st_ui(clean_text).value
+        
 
 if __name__ == "__main__":
     pdf_extract()
