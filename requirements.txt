@@ -1,3 +1,4 @@
 PyMuPDF
 nltk
 streamlit
+pydaisi
