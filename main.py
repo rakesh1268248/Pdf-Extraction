@@ -59,7 +59,7 @@ def pdf_extract():
         sentences = nltk.sent_tokenize(text)
         clean_text=preprocessing(sentences)
         #st.write(clean_text)
-        wordcloud=wc.st_ui(clean_text).value
+        wc.st_ui(clean_text).value
     
 
 if __name__ == "__main__":
