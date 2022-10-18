@@ -43,7 +43,7 @@ def preprocessing(sentences):
     
     return documents_clean
 
-def pdf_extract():
+def pdf_extract(wc):
     st.set_page_config(layout = "wide")
     st.title("PDF data extraction")
 
@@ -59,9 +59,10 @@ def pdf_extract():
         sentences = nltk.sent_tokenize(text)
         clean_text=preprocessing(sentences)
         #st.write(clean_text)
-    return clean_text
+    wordcloud=wc.st_ui(clean_text).value
+    st.image(wordcloud)
     
 
 if __name__ == "__main__":
-    clean_text=pdf_extract()
-    wc.st_ui(clean_text).value
+    pdf_extract()
+    
