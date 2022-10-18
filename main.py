@@ -10,6 +10,8 @@ from nltk.corpus import stopwords  #stopwords
 from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
 # stemmer=PorterStemmer()
+import pydaisi as pyd
+wc = pyd.Daisi("feedexpedition/WordCloud")
 
 def return_doc_from_bytes(pdfbytes):
     doc = fitz.open(stream=pdfbytes)
