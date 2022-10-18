@@ -2,4 +2,3 @@ PyMuPDF
 nltk
 streamlit
 pydaisi
-matplotlib
