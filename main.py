@@ -51,6 +51,8 @@ def pdf_extract():
     if fileupload:
         pdfbytes = fileupload.getvalue()
         doc = return_doc_from_bytes(pdfbytes)
+        toc, page_count = get_info(doc)
+        print(toc)  
         text = ''
         for page in doc:
             text += page.get_text()
